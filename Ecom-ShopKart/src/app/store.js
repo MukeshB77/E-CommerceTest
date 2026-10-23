@@ -3,17 +3,19 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import productsReducer from '../features/products/productsSlice';
 import cartReducer from '../features/cart/cartSlice';
+import themeReducer from '../features/theme/themeSlice';
 
 const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,
+  theme: themeReducer,
 });
 
 const persistedReducer = persistReducer(
   {
     key: 'shopkart',
     storage,
-    whitelist: ['cart'],
+    whitelist: ['cart', 'theme'],
   },
   rootReducer,
 );

@@ -140,6 +140,23 @@ h3 {
 .cart-link.active {
   background: #2b3140;
 }
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #343b4d;
+  border-radius: 9px;
+  background: #2b3140;
+  color: #f0b27d;
+  font-size: 23px;
+  line-height: 1;
+}
+.theme-toggle:hover {
+  background: #343b4d;
+}
 .cart-badge {
   display: inline-flex;
   align-items: center;
@@ -1240,6 +1257,7 @@ h3 {
 .button,
 .nav-products,
 .cart-link,
+.theme-toggle,
 .quantity-control,
 .thumbnail {
   transition:
@@ -1254,7 +1272,8 @@ h3 {
 }
 
 .nav-products:hover,
-.cart-link:hover {
+.cart-link:hover,
+.theme-toggle:hover {
   background: #2b3140;
 }
 
@@ -1313,4 +1332,310 @@ h3 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #e3e9ef;
+  background: #0b1118;
+  --navy: #111b27;
+  --orange: #a9c9dc;
+  --page: #0b1118;
+  --border: #293746;
+  --muted: #9eacba;
+  --green: #9bbbad;
+  --surface: #141e2a;
+  --surface-raised: #1a2735;
+  --text: #e3e9ef;
+  --text-secondary: #bdc8d3;
+  --accent: #a9c9dc;
+  --accent-hover: #89b0c7;
+}
+
+:root[data-theme="dark"] body {
+  background: var(--page);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .site-header {
+  background: #080e16;
+}
+
+:root[data-theme="dark"] .brand span,
+:root[data-theme="dark"] .shop-hero-eyebrow {
+  color: var(--accent);
+}
+
+:root[data-theme="dark"] .shop-hero-eyebrow span {
+  background-color: var(--accent);
+}
+
+:root[data-theme="dark"] .search-form {
+  border-color: #2b3a49;
+  background: #172330;
+  color: #b8c5d1;
+}
+
+:root[data-theme="dark"] .search-form input {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .search-form input::placeholder {
+  color: #9eacba;
+}
+
+:root[data-theme="dark"] .nav-products,
+:root[data-theme="dark"] .cart-link {
+  color: #dce5ed;
+}
+
+:root[data-theme="dark"] .nav-products.active,
+:root[data-theme="dark"] .cart-link.active,
+:root[data-theme="dark"] .nav-products:hover,
+:root[data-theme="dark"] .cart-link:hover {
+  background: #1b2937;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  border-color: #314354;
+  background: #1b2937;
+  color: var(--accent);
+}
+
+:root[data-theme="dark"] .theme-toggle:hover {
+  background: #263849;
+}
+
+:root[data-theme="dark"] .cart-badge {
+  background: #789db4;
+  color: #09121b;
+}
+
+:root[data-theme="dark"] .cart-badge.zero {
+  background: #334454;
+  color: #dce5ed;
+}
+
+:root[data-theme="dark"] .site-footer {
+  border-color: var(--border);
+  background: #101923;
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .shop-hero::before {
+  border-color: #2b3a49;
+}
+
+:root[data-theme="dark"] .shop-hero-description {
+  color: #bdc8d3;
+}
+
+:root[data-theme="dark"] .shop-hero-featured {
+  border-color: #344657;
+  background: #172330;
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .shop-hero-featured-arrow,
+:root[data-theme="dark"] .shop-hero-button {
+  color: #0b1118;
+}
+
+:root[data-theme="dark"] .sort-control select,
+:root[data-theme="dark"] .category-chip,
+:root[data-theme="dark"] .product-card,
+:root[data-theme="dark"] .no-results,
+:root[data-theme="dark"] .detail-panel,
+:root[data-theme="dark"] .cart-items-panel,
+:root[data-theme="dark"] .order-summary,
+:root[data-theme="dark"] .empty-cart-panel {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .sort-control select {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .category-chip {
+  color: #c4cfda;
+}
+
+:root[data-theme="dark"] .category-chip.selected {
+  border-color: #789db4;
+  background: #789db4;
+  color: #09121b;
+}
+
+:root[data-theme="dark"] .product-card {
+  box-shadow: 0 2px 10px rgb(0 0 0 / 18%);
+}
+
+:root[data-theme="dark"] .tint-0 {
+  background: #d5c8c5;
+}
+
+:root[data-theme="dark"] .tint-1 {
+  background: #c9d5df;
+}
+
+:root[data-theme="dark"] .tint-2 {
+  background: #cbd9d1;
+}
+
+:root[data-theme="dark"] .tint-3 {
+  background: #ddd4c3;
+}
+
+:root[data-theme="dark"] .tint-4 {
+  background: #d0d2d8;
+}
+
+:root[data-theme="dark"] .tint-5 {
+  background: #cbd0df;
+}
+
+:root[data-theme="dark"] .tint-6 {
+  background: #d9cbd5;
+}
+
+:root[data-theme="dark"] .tint-7 {
+  background: #c6d5d8;
+}
+
+:root[data-theme="dark"] .product-image-wrap img,
+:root[data-theme="dark"] .shop-hero-image img,
+:root[data-theme="dark"] .detail-main-image img,
+:root[data-theme="dark"] .thumbnail img,
+:root[data-theme="dark"] .cart-item-image img {
+  mix-blend-mode: normal;
+  filter: brightness(1.12);
+}
+
+:root[data-theme="dark"] .rating-star {
+  color: #d2b878;
+}
+
+:root[data-theme="dark"] .button-primary {
+  background: #91b4ca;
+  color: #0b1118;
+}
+
+:root[data-theme="dark"] .button-primary:hover {
+  background: #a9c9dc;
+}
+
+:root[data-theme="dark"] .button-outline {
+  border-color: #526273;
+  background: #172330;
+  color: #dce5ed;
+}
+
+:root[data-theme="dark"] .button-outline:hover {
+  background: #223140;
+}
+
+:root[data-theme="dark"] .quantity-control {
+  border-color: #3a4a59;
+  background: #172330;
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .quantity-control button {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .loader {
+  border-color: #293746;
+  border-top-color: var(--accent);
+}
+
+:root[data-theme="dark"] .breadcrumbs strong {
+  color: #dce5ed;
+}
+
+:root[data-theme="dark"] .status-panel h1 {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .thumbnail {
+  border-color: var(--border);
+  background: #172330;
+}
+
+:root[data-theme="dark"] .thumbnail.active {
+  border-color: var(--accent);
+}
+
+:root[data-theme="dark"] .category-pill {
+  background: #263544;
+  color: #bdc8d3;
+}
+
+:root[data-theme="dark"] .detail-description {
+  border-color: var(--border);
+  color: #bdc8d3;
+}
+
+:root[data-theme="dark"] .continue-shopping {
+  color: #c9d4de;
+}
+
+:root[data-theme="dark"] .cart-items-header,
+:root[data-theme="dark"] .cart-item-row {
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .remove-button {
+  background: #392a31;
+  color: #e6a6ae;
+}
+
+:root[data-theme="dark"] .summary-row {
+  color: #bdc8d3;
+}
+
+:root[data-theme="dark"] .summary-row strong {
+  color: #e3e9ef;
+}
+
+:root[data-theme="dark"] .summary-total {
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .empty-cart-icon {
+  background: #352b2c;
+}
+
+:root[data-theme="dark"] .mobile-search {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .mobile-search::placeholder {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .shop-hero-featured:focus-visible,
+:root[data-theme="dark"] .button:focus-visible,
+:root[data-theme="dark"] .category-chip:focus-visible,
+:root[data-theme="dark"] .nav-products:focus-visible,
+:root[data-theme="dark"] .cart-link:focus-visible,
+:root[data-theme="dark"] .brand:focus-visible,
+:root[data-theme="dark"] .product-title:focus-visible,
+:root[data-theme="dark"] .product-image-link:focus-visible,
+:root[data-theme="dark"] .theme-toggle:focus-visible,
+:root[data-theme="dark"] .quantity-control button:focus-visible,
+:root[data-theme="dark"] .remove-button:focus-visible {
+  outline-color: var(--accent);
+}
+
+:root[data-theme="dark"] .shop-hero-featured:hover {
+  box-shadow: 0 16px 34px rgb(0 0 0 / 36%);
+}
+
+:root[data-theme="dark"] .product-card:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 32%);
 }
