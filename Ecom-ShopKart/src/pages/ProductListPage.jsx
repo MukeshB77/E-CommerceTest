@@ -29,8 +29,7 @@ export default function ProductListPage() {
   }, [location.state]);
 
   const visibleProducts = useMemo(() => {
-    // The reference design displays the first eight Fake Store API products.
-    let result = [...items].slice(0, 8);
+    let result = [...items];
     if (category !== 'all') result = result.filter((product) => product.category === category);
     if (search.trim()) {
       const query = search.trim().toLowerCase();
