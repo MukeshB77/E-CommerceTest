@@ -60,7 +60,7 @@ export default function ProductListPage() {
         <div className="shop-hero-copy">
           <p className="shop-hero-eyebrow">
             {/* <span aria-hidden="true" /> */}
-           The HollowCart collection</p>
+           The HollowKart collection</p>
           <h2 id="shop-hero-title">Find something you’ll love.</h2>
           <p className="shop-hero-description">Everyday essentials and little luxuries, all in one place.</p>
           <a className="button button-primary shop-hero-button" href="#product-grid">

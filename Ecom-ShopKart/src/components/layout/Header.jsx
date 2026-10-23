@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" className="brand" aria-label="HollowCart home">Hollow<span>Cart</span></Link>
+        <Link to="/" className="brand" aria-label="HollowKart home">Hollow<span>Kart</span></Link>
         <form className="search-form" onSubmit={submitSearch}>
           <span className="search-icon" aria-hidden="true">⌕</span>
           <input
