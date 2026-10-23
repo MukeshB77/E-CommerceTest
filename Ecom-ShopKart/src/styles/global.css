@@ -175,6 +175,131 @@ h3 {
 .listing-page {
   padding-top: 36px;
 }
+.shop-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 260px;
+  margin-bottom: 32px;
+  padding: 30px 38px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--navy);
+  color: #fff;
+}
+.shop-hero::before {
+  position: absolute;
+  top: -120px;
+  right: 22%;
+  width: 360px;
+  height: 360px;
+  border: 1px solid #343b4d;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+.shop-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 470px;
+}
+.shop-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: #f0b27d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.shop-hero-eyebrow span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f0b27d;
+}
+.shop-hero h2 {
+  max-width: 440px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+.shop-hero-description {
+  max-width: 390px;
+  margin: 12px 0 20px;
+  color: #d4d7de;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.shop-hero-button {
+  gap: 12px;
+  min-height: 44px;
+}
+.shop-hero-featured {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 14px;
+  width: min(340px, 42%);
+  min-height: 116px;
+  padding: 12px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 15%);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.shop-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  padding: 9px;
+  overflow: hidden;
+  border-radius: 9px;
+}
+.shop-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.shop-hero-featured-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.shop-hero-featured-copy span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.shop-hero-featured-copy strong {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.shop-hero-featured-arrow {
+  align-self: start;
+  color: var(--orange);
+  font-size: 18px;
+  font-weight: 700;
+}
 .page-heading-row,
 .cart-heading-row {
   display: flex;
@@ -833,6 +958,12 @@ h3 {
   .product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .shop-hero {
+    padding: 28px;
+  }
+  .shop-hero-featured {
+    width: min(320px, 44%);
+  }
   .cart-layout {
     grid-template-columns: minmax(0, 1fr) 285px;
     gap: 14px;
@@ -888,6 +1019,39 @@ h3 {
   .listing-page,
   .cart-page {
     padding-top: 23px;
+  }
+  .shop-hero {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    min-height: auto;
+    margin-bottom: 26px;
+    padding: 24px 20px;
+  }
+  .shop-hero::before {
+    top: auto;
+    right: -140px;
+    bottom: -180px;
+  }
+  .shop-hero-copy {
+    max-width: 100%;
+  }
+  .shop-hero h2 {
+    max-width: 360px;
+    font-size: 32px;
+  }
+  .shop-hero-description {
+    margin: 10px 0 16px;
+    font-size: 13px;
+  }
+  .shop-hero-featured {
+    grid-template-columns: 66px minmax(0, 1fr) 24px;
+    width: 100%;
+    min-height: 88px;
+    padding: 9px;
+  }
+  .shop-hero-image {
+    height: 68px;
   }
   .page-heading-row {
     align-items: flex-start;
@@ -1104,6 +1268,7 @@ h3 {
 }
 
 .button:focus-visible,
+.shop-hero-featured:focus-visible,
 .category-chip:focus-visible,
 .nav-products:focus-visible,
 .cart-link:focus-visible,
@@ -1124,6 +1289,11 @@ h3 {
 }
 
 @media (hover: hover) {
+  .shop-hero-featured:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgb(0 0 0 / 20%);
+  }
+
   .product-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgb(20 28 45 / 8%);

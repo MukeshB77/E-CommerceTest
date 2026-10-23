@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { fetchProducts } from '../features/products/productsSlice';
 import ProductCard from '../components/products/ProductCard';
 
@@ -57,6 +57,35 @@ export default function ProductListPage() {
 
   return (
     <section className="page-container listing-page">
+      <section className="shop-hero" aria-labelledby="shop-hero-title">
+        <div className="shop-hero-copy">
+          <p className="shop-hero-eyebrow">
+            {/* <span aria-hidden="true" /> */}
+           The HollowCart collection</p>
+          <h2 id="shop-hero-title">Find something you’ll love.</h2>
+          <p className="shop-hero-description">Everyday essentials and little luxuries, all in one place.</p>
+          <a className="button button-primary shop-hero-button" href="#product-grid">
+            Browse products <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        {items[0] && (
+          <Link
+            className="shop-hero-featured"
+            to={`/product/${items[0].id}`}
+            aria-label={`Featured product: ${items[0].title}`}
+          >
+            <div className={`shop-hero-image tint-${(items[0].id - 1) % 8}`}>
+              <img src={items[0].image} alt="" />
+            </div>
+            <div className="shop-hero-featured-copy">
+              <span>Picked for you</span>
+              <strong>{items[0].title}</strong>
+            </div>
+            <span className="shop-hero-featured-arrow" aria-hidden="true">↗</span>
+          </Link>
+        )}
+      </section>
+
       <div className="page-heading-row">
         <div>
           <h1>All products</h1>
@@ -88,11 +117,11 @@ export default function ProductListPage() {
       </div>
 
       {visibleProducts.length ? (
-        <div className="product-grid">
+        <div className="product-grid" id="product-grid">
           {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
         </div>
       ) : (
-        <div className="no-results"><h2>No products found</h2><p>Try another search or category.</p></div>
+        <div className="no-results" id="product-grid"><h2>No products found</h2><p>Try another search or category.</p></div>
       )}
     </section>
   );
